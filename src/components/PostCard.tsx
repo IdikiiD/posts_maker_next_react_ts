@@ -7,6 +7,7 @@ import PostImage from "@/components/PostImage";
 import PostActions from "@/components/PostActions";
 import PostCaption from "@/components/PostCaption";
 import React, {useState} from "react";
+import {Header} from "@/components/Header";
 
 type PostCardProps = {
     post: Post
@@ -26,6 +27,7 @@ export default function PostCard({ post }: PostCardProps) {
     }
     return(
         <article className="bg-white border border-gray-200 rounded-lg mb-6 max-w-[470px] w-full">
+
             <PostHeader
                 username={post.author.username}
                 avatar={post.author.avatar}
