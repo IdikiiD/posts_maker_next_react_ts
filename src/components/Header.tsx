@@ -2,14 +2,17 @@
 
 import Link from "next/link";
 import {ArrowLeft, PlusSquare} from "lucide-react";
-import {usePathname} from "next/navigation";
+import {redirect, usePathname} from "next/navigation";
+import LogoutButton from "@/components/LogoutButton";
+import {getAuthSession} from "@/lib/auth";
 
 
 
 
-export const Header = () => {
+export const Header = async () => {
     const pathname = usePathname();
     const isCreating = pathname === "/create";
+
 
     return (
 
@@ -41,6 +44,10 @@ export const Header = () => {
                             <PlusSquare className="w-6 h-6" />
                             <span className="font-medium">Создать</span>
                         </Link>
+                        <LogoutButton />
+
+
+
                     </div>
                 </header>
             )
